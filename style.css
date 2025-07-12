@@ -1,0 +1,144 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: url('uploads/sea.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Popup */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(30, 20, 10, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background: rgba(255, 235, 205, 0.95);
+  padding: 30px;
+  border-radius: 15px;
+  color: #6b3e26;
+  font-size: 1.6rem;
+  font-weight: bold;
+  box-shadow: 0 0 20px rgba(255, 165, 0, 0.8);
+  text-align: center;
+}
+
+.gift-box {
+  font-size: 3rem;
+  cursor: pointer;
+  margin-top: 20px;
+  animation: bounce 2s infinite;
+  transition: transform 0.3s ease;
+}
+
+.gift-box:hover {
+  transform: scale(1.2);
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.main-content {
+  padding: 100px 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  min-height: 100vh;
+  z-index: 2;
+  animation: fadeIn 1s ease-in-out;
+}
+
+h1 {
+  font-size: 3rem;
+  color: #ffcc80;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.3rem;
+  color: #fffbe6;
+  max-width: 700px;
+  margin: auto;
+  font-weight: 500;
+}
+
+.message-box {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid #ffcc80;
+  padding: 20px;
+  margin: 30px auto;
+  max-width: 600px;
+  font-weight: 600;
+  color: #ffe4b5;
+  border-radius: 12px;
+  font-size: 1.15rem;
+  box-shadow: 0 0 15px rgba(255, 204, 128, 0.5);
+}
+
+/* Extra Quotes */
+.quote-box {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px dashed #ffcc80;
+  padding: 20px;
+  margin: 25px auto;
+  max-width: 600px;
+  font-weight: 600;
+  color: #ffe4b5;
+  border-radius: 15px;
+  font-size: 1.1rem;
+  box-shadow: 0 0 12px rgba(255, 204, 128, 0.4);
+}
+
+.quote-text {
+  font-size: 1.15rem;
+  margin-top: 20px;
+  color: #fff7e6;
+  font-weight: 500;
+}
+
+/* Falling Leaves */
+.leaves {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 9999;
+}
+
+.leaf {
+  position: absolute;
+  width: 60px;
+  animation: fall 10s linear infinite;
+  top: -100px;
+  opacity: 0.8;
+}
+
+@keyframes fall {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(120vh) rotate(360deg); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+

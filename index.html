@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>For My Dearest Akka 🍁</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Popup -->
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <p>A Kutti Surprise from Your Anbu Thambi 💕</p>
+      <div id="giftTrigger" class="gift-box">🎁</div>
+    </div>
+  </div>
+
+  <!-- Main Message -->
+  <div class="main-content" style="display: none;">
+    <h1>To My Sister 💛</h1>
+    <p>You are the calm in my storm, the strength in my weakness, and the forever warmth in my heart.</p>
+
+    <br>
+
+    <!-- Message Box -->
+    <div class="message-box">
+      🌷 You are the poem my heart always wanted to write, the melody it always wanted to sing. 🎶
+    </div>
+
+    <br>
+
+    <!-- Extra Quote in a Box -->
+    <div class="quote-box">
+      🌸 Having you as my sister is the universe’s greatest gift. Your love lights up my world in ways words can't describe. 💫 
+    </div>
+
+    <br>
+
+    <!-- Simple Elegant Quote -->
+    <p class="quote-text">
+      💖 I'm always here for you, Mariyamm Akka. Not just as your brother, but as the soul that understands you. 🍂
+    </p>
+  </div>
+
+  <!-- Falling Leaves (or beach effect area) -->
+  <div class="leaves" style="display: none;"></div>
+
+  <!-- Background Music -->
+  <audio id="bgm" loop>
+    <source src="uploads/bgm.mp3" type="audio/mpeg" />
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- JavaScript -->
+  <script>
+    const gift = document.getElementById("giftTrigger");
+    const popup = document.getElementById("popup");
+    const bgm = document.getElementById("bgm");
+    const mainContent = document.querySelector(".main-content");
+    const leavesContainer = document.querySelector(".leaves");
+
+    gift.addEventListener("click", () => {
+      bgm.volume = 0.3;
+      bgm.play().catch(() => alert("Please tap again to allow music playback."));
+      popup.style.display = "none";
+      mainContent.style.display = "block";
+      leavesContainer.style.display = "block";
+    });
+
+    function createLeaf() {
+      const leaf = document.createElement("img");
+      leaf.src = "uploads/leaf.png";
+      leaf.className = "leaf";
+
+      const size = Math.random() * 30 + 30;
+      leaf.style.width = `${size}px`;
+      leaf.style.left = `${Math.random() * 100}%`;
+      leaf.style.animationDuration = `${Math.random() * 10 + 10}s`;
+      leaf.style.animationDelay = `${Math.random() * 2}s`;
+
+      leavesContainer.appendChild(leaf);
+      setTimeout(() => leaf.remove(), 20000);
+    }
+
+    setInterval(createLeaf, 600);
+  </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
